@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | TrapZone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="barra-navegacion">
+      <a href="../index.html" class="logotipo">TrapZone</a>
+      <ul class="lista-navegacion">
+        <li><a href="../index.html" class="enlace-navegacion">Inicio</a></li>
+        <li><a href="sobre-mi.html" class="enlace-navegacion">Artistas</a></li>
+        <li><a href="proyectos.html" class="enlace-navegacion">Lanzamientos</a></li>
+        <li><a href="servicios.html" class="enlace-navegacion">Producción</a></li>
+        <li><a href="contacto.html" class="enlace-navegacion activo">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor-principal">
+    <section class="seccion-hero">
+      <h1 class="titulo-principal">Contacto &amp; Booking</h1>
+      <p class="texto-destacado">
+        ¿Te interesa proponer un feat, enviar una maqueta o gestionar fechas de shows? Déjanos un mensaje.
+      </p>
+    </section>
+
+    <section class="seccion-contenido">
+      <h2 class="subtitulo-seccion">Envía tu Consulta</h2>
+      <form action="#" method="POST" class="formulario-contacto">
+        <div class="grupo-formulario">
+          <label for="nombre-contacto" class="etiqueta-campo">Nombre o Productora</label>
+          <input type="text" id="nombre-contacto" name="nombre" class="campo-texto" placeholder="Ej. El Combo Records" required>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="correo-contacto" class="etiqueta-campo">Correo electrónico</label>
+          <input type="email" id="correo-contacto" name="email" class="campo-texto" placeholder="contacto@sello.com" required>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="asunto-contacto" class="etiqueta-campo">Artista o Motivo de consulta</label>
+          <input type="text" id="asunto-contacto" name="asunto" class="campo-texto" placeholder="Ej. Feat con Juicy Nise / Cris Mj" required>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="mensaje-contacto" class="etiqueta-campo">Detalles del mensaje</label>
+          <textarea id="mensaje-contacto" name="mensaje" rows="5" class="area-texto" placeholder="Cuéntanos detalles de la propuesta o fechas..." required></textarea>
+        </div>
+
+        <button type="submit" class="boton-primario boton-envio">Enviar Consulta</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie-pagina">
+    <p class="texto-copyright">&copy; 2026 TrapZone Web. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
