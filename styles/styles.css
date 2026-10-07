@@ -45,8 +45,7 @@ body {
    =================================================== */
 .barra-navegacion {
   background-color: var(--color-superficie);
-  border-bottom: 1px side var(--color-borde);
-  border-bottom: 1px solid var(--color-borde);
+  border-bottom: 1px solid var(--color-borde); 
   padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -120,16 +119,34 @@ body {
 }
 
 /* ===================================================
-   CONTENEDOR DE TARJETAS: MOBILE 
+   CUADRÍCULA DE TARJETAS (MOBILE-FIRST CON CSS GRID)
    =================================================== */
+.cuadricula-tarjetas,
 .contenedor-tarjetas-flex {
-  display: flex;
-  flex-direction: column; 
-  gap: 1.5rem;            
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3";
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.tarjeta-1 {
+  grid-area: card1;
+}
+
+.tarjeta-2 {
+  grid-area: card2;
+}
+
+.tarjeta-3 {
+  grid-area: card3;
 }
 
 /* ===================================================
-   TARJETAS: Padding mayor a 20px 
+   TARJETAS
    =================================================== */
 .tarjeta {
   background-color: var(--color-superficie);
@@ -149,7 +166,7 @@ body {
 }
 
 /* ===================================================
-   SECCIÓN CON CSS GRID Y GRID-TEMPLATE-AREAS 
+   SECCIÓN CON CSS GRID Y GRID-TEMPLATE-AREAS MAESTRO
    =================================================== */
 .grid-layout-maestro {
   display: grid;
@@ -169,7 +186,7 @@ body {
 }
 
 /* ===================================================
-   TIPOGRAFIA Y COMPONENTES
+   TIPOGRAFÍA Y COMPONENTES
    =================================================== */
 .titulo-principal {
   font-family: var(--fuente-titulos);
@@ -301,14 +318,36 @@ body {
   font-size: 0.85rem;
 }
 
+/* ===================================================
+   BREAKPOINT TABLET: min-width: 768px (Sugerencia docente)
+   =================================================== */
+@media (min-width: 768px) {
+  .barra-navegacion {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+  }
+
+  .lista-navegacion {
+    gap: 1.25rem;
+  }
+
+  .cuadricula-tarjetas,
+  .contenedor-tarjetas-flex {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "card1 card2"
+      "card3 card3";
+    gap: 1.5rem;
+  }
+}
 
 /* ===================================================
-   BREAKPOINT DESKTOP: min-width: 1024px 
+   BREAKPOINT DESKTOP: min-width: 1024px (Requisito Rúbrica)
    =================================================== */
 @media (min-width: 1024px) {
 
   .barra-navegacion {
-    flex-direction: row;
     padding: 1.25rem 3rem;
   }
 
@@ -326,10 +365,10 @@ body {
     padding: 2.5rem;
   }
 
-  
+  .cuadricula-tarjetas,
   .contenedor-tarjetas-flex {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "card1 card2 card3";
     gap: 1.75rem;
   }
 
